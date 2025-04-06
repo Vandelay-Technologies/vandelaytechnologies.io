@@ -1,16 +1,16 @@
 const members = [
     {
         name: 'Tomas Buelow',
-        role: 'Founder',
-        avatar: 'https://i.ibb.co/PsncZvg5/team-image-tom.png',
+        role: 'Co-Founder',
+        avatar: 'https://i.ibb.co/N2GfhtnV/tom-new.png',
     },
     {
         name: 'David Barclay',
-        role: 'Janitor',
+        role: 'Co-Founder',
         avatar: 'https://i.ibb.co/HT6fTPSJ/db-image.jpg',
     },
     {
-        name: 'Marius krasauskas',
+        name: 'Marius Krasauskas',
         role: 'Lead Dev',
         avatar: 'https://i.ibb.co/mF22RgXY/Marius.jpg',
     },
