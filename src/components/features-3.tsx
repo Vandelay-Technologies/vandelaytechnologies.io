@@ -11,7 +11,7 @@ export default function Features() {
                     <p className="mt-4">We help high-potential Web3 projects move from chaos to clarity and sustainable growth.</p>
                 </div>
                 <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-3 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-                    <div className="group bg-transparent">
+                    <div className="group shadow-zinc-950/5">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Zap className="size-6" aria-hidden />
