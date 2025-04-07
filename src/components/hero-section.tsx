@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { Logo } from '@/components/logo'
 import { ArrowRight, Menu, Rocket, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { scrollToSection } from '@/lib/scroll'
 
 const menuItems = [
     { name: 'Features', href: '#features' },
@@ -20,6 +21,12 @@ const menuItems = [
 
 export default function HeroSection() {
     const [menuState, setMenuState] = React.useState(false)
+
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        setMenuState(false); // Close mobile menu if open
+        scrollToSection(href);
+    };
 
     return (
         <>
@@ -43,7 +50,11 @@ export default function HeroSection() {
                                     <ul className="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
                                         {menuItems.map((item, index) => (
                                             <li key={index}>
-                                                <Link href={item.href} className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                                <Link 
+                                                    href={item.href} 
+                                                    onClick={(e) => handleScroll(e, item.href)}
+                                                    className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                                                >
                                                     <span>{item.name}</span>
                                                 </Link>
                                             </li>
@@ -101,25 +112,28 @@ export default function HeroSection() {
 
                                 <Swiper slidesPerView={1} pagination={{ clickable: true }} loop autoplay={{ delay: 5000 }} modules={[Autoplay, EffectCoverflow]}>
                                     <SwiperSlide className="px-2">
-                                        <div className="bg-background rounded-(--radius) h-44 max-w-lg border p-9">
+                                        <div className="bg-background relative h-44 max-w-lg border p-9">
+                                            <CornerDecorator />
                                             <div className="mx-auto h-fit w-full">
-                                                <NetlifyLogo />
+                                                <TsukaLogo />
                                             </div>
                                             <p className="mt-6 text-center text-lg font-medium">Reached Mcap $156.5m</p>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide className="px-2">
-                                        <div className="bg-background rounded-(--radius) h-44 max-w-lg border p-9">
+                                        <div className="bg-background relative h-44 max-w-lg border p-9">
+                                            <CornerDecorator />
                                             <div className="mx-auto h-fit w-full">
-                                                <AstroLogo />
+                                                <CresoLogo />
                                             </div>
                                             <p className="mt-6 text-center text-lg font-medium">Reached Mcap $124.5m</p>
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide className="px-2">
-                                        <div className="bg-background rounded-(--radius) h-44 max-w-lg border p-9">
+                                        <div className="bg-background relative h-44 max-w-lg border p-9">
+                                            <CornerDecorator />
                                             <div className="mx-auto h-fit w-full">
-                                                <WorkOsLogo />
+                                                <OptimusLogo />
                                             </div>
                                             <p className="mt-6 text-center text-lg font-medium">Reached Mcap $58.5m</p>
                                         </div>
@@ -134,19 +148,28 @@ export default function HeroSection() {
     )
 }
 
-const WorkOsLogo = () => {
+const CornerDecorator = () => (
+    <>
+        <span className="border-primary absolute -left-px -top-px block size-2 border-l-2 border-t-2"></span>
+        <span className="border-primary absolute -right-px -top-px block size-2 border-r-2 border-t-2"></span>
+        <span className="border-primary absolute -bottom-px -left-px block size-2 border-b-2 border-l-2"></span>
+        <span className="border-primary absolute -bottom-px -right-px block size-2 border-b-2 border-r-2"></span>
+    </>
+)
+
+const OptimusLogo = () => {
     return (
         <img src="/optimus.png" alt="Optimus Logo" className="mx-auto h-12" />
     )
 }
 
-const AstroLogo = () => {
+const CresoLogo = () => {
     return (
         <img src="/creso.png" alt="Creso Logo" className="mx-auto h-12" />
     )
 }
 
-const NetlifyLogo = () => {
+const TsukaLogo = () => {
     return (
         <img src="/tsuka.png" alt="Tsuka Logo" className="mx-auto h-12" />
     )

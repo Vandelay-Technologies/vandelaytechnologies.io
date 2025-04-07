@@ -1,23 +1,25 @@
+import Image from 'next/image'
+
 const members = [
     {
         name: 'Tomas Buelow',
         role: 'Co-Founder',
-        avatar: 'https://i.ibb.co/N2GfhtnV/tom-new.png',
+        avatar: '/team/tom.png',
     },
     {
         name: 'David Barclay',
         role: 'Co-Founder',
-        avatar: 'https://i.ibb.co/HT6fTPSJ/db-image.jpg',
+        avatar: '/team/david.png',
     },
     {
         name: 'Marius Krasauskas',
         role: 'Lead Dev',
-        avatar: 'https://i.ibb.co/mF22RgXY/Marius.jpg',
+        avatar: '/team/marius.png',
     },
     {
         name: 'Ally Polishchuk',
         role: 'Marketing',
-        avatar: 'https://i.ibb.co/Wb0K2vv/ally-team-image.jpg',
+        avatar: '/team/ally.png',
     },
 ]
 
@@ -33,7 +35,14 @@ export default function TeamSection() {
                         {members.map((member, index) => (
                             <div key={index}>
                                 <div className="bg-background size-20 rounded-full border p-0.5 shadow shadow-zinc-950/5">
-                                    <img className="aspect-square rounded-full object-cover" src={member.avatar} alt={member.name} height="460" width="460"/>
+                                    <Image 
+                                        className="aspect-square rounded-full object-cover" 
+                                        src={member.avatar} 
+                                        alt={member.name} 
+                                        width={160} 
+                                        height={160}
+                                        loading="lazy"
+                                    />
                                 </div>
                                 <span className="mt-2 block text-sm">{member.name}</span>
                                 <span className="text-muted-foreground block text-xs">{member.role}</span>

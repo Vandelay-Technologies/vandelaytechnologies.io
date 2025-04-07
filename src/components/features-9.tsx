@@ -5,10 +5,20 @@ import DottedMap from 'dotted-map'
 import { Area, AreaChart, CartesianGrid } from 'recharts'
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 
+const CardDecorator = () => (
+    <>
+        <span className="border-primary absolute -left-px -top-px block size-2 border-l-2 border-t-2"></span>
+        <span className="border-primary absolute -right-px -top-px block size-2 border-r-2 border-t-2"></span>
+        <span className="border-primary absolute -bottom-px -left-px block size-2 border-b-2 border-l-2"></span>
+        <span className="border-primary absolute -bottom-px -right-px block size-2 border-b-2 border-r-2"></span>
+    </>
+)
+
 export default function FeaturesSection() {
     return (
         <section id="services" className="px-4 py-16 md:py-32">
-            <div className="mx-auto grid max-w-5xl border md:grid-cols-2">
+            <div className="mx-auto grid max-w-5xl border md:grid-cols-2 relative">
+                <CardDecorator />
                 <div>
                     <div className="p-6 sm:p-12">
                         <span className="text-muted-foreground flex items-center gap-2">
@@ -62,7 +72,7 @@ export default function FeaturesSection() {
                 <div className="col-span-full border-y p-12">
                     <p className="text-center text-4xl font-semibold lg:text-7xl">Secure Audited Smart Contracts</p>
                 </div>
-                <div className="relative col-span-full">
+                <div className="col-span-full">
                     <div className="absolute z-10 max-w-lg px-6 pr-12 pt-6 md:px-12 md:pt-12">
                         <span className="text-muted-foreground flex items-center gap-2">
                             <Activity className="size-4" />
@@ -102,23 +112,23 @@ const Map = () => {
 }
 
 const chartConfig = {
-    desktop: {
+    buys: {
         label: 'Token Buys',
         color: '#2563eb',
     },
-    mobile: {
-        label: 'X Impressions',
+    social: {
+        label: 'Socials',
         color: '#60a5fa',
     },
 } satisfies ChartConfig
 
 const chartData = [
-    { month: 'May', desktop: 56, mobile: 224 },
-    { month: 'June', desktop: 56, mobile: 224 },
-    { month: 'January', desktop: 126, mobile: 252 },
-    { month: 'February', desktop: 205, mobile: 410 },
-    { month: 'March', desktop: 200, mobile: 126 },
-    { month: 'April', desktop: 400, mobile: 800 },
+    { month: 'May', buys: 36, social: 124 },
+    { month: 'June', buys: 56, social: 164 },
+    { month: 'January', buys: 126, social: 252 },
+    { month: 'February', buys: 205, social: 410 },
+    { month: 'March', buys: 200, social: 330 },
+    { month: 'April', buys: 400, social: 800 },
 ]
 
 const MonitoringChart = () => {
@@ -132,19 +142,19 @@ const MonitoringChart = () => {
                     right: 0,
                 }}>
                 <defs>
-                    <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="var(--color-desktop)" stopOpacity={0.8} />
-                        <stop offset="55%" stopColor="var(--color-desktop)" stopOpacity={0.1} />
+                    <linearGradient id="fillbuys" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="var(--color-buys)" stopOpacity={0.8} />
+                        <stop offset="55%" stopColor="var(--color-buys)" stopOpacity={0.1} />
                     </linearGradient>
-                    <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="var(--color-mobile)" stopOpacity={0.8} />
-                        <stop offset="55%" stopColor="var(--color-mobile)" stopOpacity={0.1} />
+                    <linearGradient id="fillsocial" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="var(--color-social)" stopOpacity={0.8} />
+                        <stop offset="55%" stopColor="var(--color-social)" stopOpacity={0.1} />
                     </linearGradient>
                 </defs>
                 <CartesianGrid vertical={false} />
-                <ChartTooltip active cursor={false} content={<ChartTooltipContent className="dark:bg-muted" />} />
-                <Area strokeWidth={2} dataKey="mobile" type="stepBefore" fill="url(#fillMobile)" fillOpacity={0.1} stroke="var(--color-mobile)" stackId="a" />
-                <Area strokeWidth={2} dataKey="desktop" type="stepBefore" fill="url(#fillDesktop)" fillOpacity={0.1} stroke="var(--color-desktop)" stackId="a" />
+                <ChartTooltip active cursor={false} content={<ChartTooltipContent className="dark:bg-muted" labelKey="month" />} />
+                <Area strokeWidth={2} dataKey="social" type="monotone" fill="url(#fillsocial)" fillOpacity={0.1} stroke="var(--color-social)" stackId="a" />
+                <Area strokeWidth={2} dataKey="buys" type="monotone" fill="url(#fillbuys)" fillOpacity={0.1} stroke="var(--color-buys)" stackId="a" />
             </AreaChart>
         </ChartContainer>
     )
