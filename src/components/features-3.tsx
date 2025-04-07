@@ -35,7 +35,7 @@ export default function Features() {
                         </CardHeader>
 
                         <CardContent>
-                            <p className="mt-3 text-sm">Streamlined tooling and processes for agile, scalable team operations.</p>
+                            <p className="text-sm">Streamlined tooling and processes for agile, scalable team operations.</p>
                         </CardContent>
                     </div>
 
@@ -49,7 +49,7 @@ export default function Features() {
                         </CardHeader>
 
                         <CardContent>
-                            <p className="mt-3 text-sm">Engagement strategies and campaigns tailored for crypto-native audiences.</p>
+                            <p className="text-sm">Engagement strategies and campaigns tailored for crypto-native audiences.</p>
                         </CardContent>
                     </div>
                 </Card>
