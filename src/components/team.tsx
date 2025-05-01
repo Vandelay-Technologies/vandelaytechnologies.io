@@ -21,6 +21,11 @@ const members = [
         role: 'Marketing',
         avatar: '/team/ally.png',
     },
+    {
+        name: 'Rico Soriano',
+        role: 'Operations',
+        avatar: '/team/rico.png',
+    },
 ]
 
 export default function TeamSection() {
