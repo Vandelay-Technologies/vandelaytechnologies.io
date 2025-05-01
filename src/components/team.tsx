@@ -36,25 +36,15 @@ export default function TeamSection() {
 
                 <div>
                     <h3 className="mb-6 text-lg font-medium">Leadership</h3>
-                    <div className="grid grid-cols-2 gap-8 border-t py-6 md:grid-cols-6">
-                        {members.slice(0, 3).map((member, index) => (
-                            <div key={index} className="md:col-span-2">
-                                <div className="bg-background size-20 rounded-full border p-0.5 shadow shadow-zinc-950/5">
-                                    <Image 
-                                        className="aspect-square rounded-full object-cover" 
-                                        src={member.avatar} 
-                                        alt={member.name} 
-                                        width={160} 
-                                        height={160}
-                                        loading="lazy"
-                                    />
-                                </div>
-                                <span className="mt-2 block text-sm">{member.name}</span>
-                                <span className="text-muted-foreground block text-xs">{member.role}</span>
-                            </div>
-                        ))}
-                        {members.slice(3).map((member, index) => (
-                            <div key={index} className="md:col-span-3">
+                    <div className="grid grid-cols-1 gap-8 border-t py-6 sm:grid-cols-2 md:grid-cols-3">
+                        {members.map((member, index) => (
+                            <div 
+                                key={index} 
+                                className={`${
+                                    index === 4 ? 'sm:col-start-2 md:col-start-2' : 
+                                    index === 3 ? 'sm:col-start-1 md:col-start-1' : ''
+                                }`}
+                            >
                                 <div className="bg-background size-20 rounded-full border p-0.5 shadow shadow-zinc-950/5">
                                     <Image 
                                         className="aspect-square rounded-full object-cover" 
