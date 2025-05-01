@@ -36,9 +36,9 @@ export default function TeamSection() {
 
                 <div>
                     <h3 className="mb-6 text-lg font-medium">Leadership</h3>
-                    <div className="grid grid-cols-2 gap-4 border-t py-6 md:grid-cols-4">
+                    <div className="grid grid-cols-2 gap-4 border-t py-6 md:grid-cols-3 lg:grid-cols-3">
                         {members.map((member, index) => (
-                            <div key={index}>
+                            <div key={index} className={`${index >= 3 ? 'md:col-start-2 lg:col-start-2' : ''}`}>
                                 <div className="bg-background size-20 rounded-full border p-0.5 shadow shadow-zinc-950/5">
                                     <Image 
                                         className="aspect-square rounded-full object-cover" 
