@@ -8,7 +8,7 @@ const members = [
     },
     {
         name: 'Marius Krasauskas',
-        role: 'Co-Founder // Lead',
+        role: 'Co-Founder // Tech',
         avatar: '/team/marius.png',
     },
     {
