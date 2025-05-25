@@ -2,28 +2,28 @@ import Image from 'next/image'
 
 const members = [
     {
-        name: 'Tomas Buelow',
-        role: 'Co-Founder',
-        avatar: '/team/tom.png',
-    },
-    {
         name: 'David Barclay',
-        role: 'Co-Founder',
+        role: 'Co-Founder // Lead',
         avatar: '/team/david.png',
     },
     {
         name: 'Marius Krasauskas',
-        role: 'Lead Dev',
+        role: 'Co-Founder // Lead',
         avatar: '/team/marius.png',
     },
     {
+        name: 'Tomas Buelow',
+        role: 'Co-Founder // Operations',
+        avatar: '/team/tom.png',
+    },
+    {
         name: 'Ally Polishchuk',
-        role: 'Marketing',
+        role: 'Strategy',
         avatar: '/team/ally.png',
     },
     {
         name: 'Rico Soriano',
-        role: 'Operations',
+        role: 'Marketing',
         avatar: '/team/rico.png',
     },
 ]
