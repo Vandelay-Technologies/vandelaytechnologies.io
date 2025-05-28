@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     description: "Empowering blockchain projects to scale and succeed with tailored Web3 development, smart contract engineering, and growth strategy. Partner with Vandelay Technologies to unlock your project's full potential.",
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://vandelaytechnologies.io/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Vandelay Technologies OG Image',
@@ -45,6 +46,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <Head>
+        <meta property="og:image" content="https://vandelaytechnologies.io/og-image.png" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
