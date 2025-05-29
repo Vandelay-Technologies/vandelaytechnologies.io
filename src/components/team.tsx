@@ -66,6 +66,7 @@ export default function TeamSection() {
                                         href={member.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label={`${member.name}'s LinkedIn profile`}
                                         className="text-muted-foreground hover:text-primary block"
                                     >
                                         <svg className="size-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">

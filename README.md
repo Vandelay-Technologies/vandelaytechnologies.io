@@ -1,3 +1,31 @@
+# Vandelay Technologies
+
+Vandelay Technologies is a full-service Web3 solutions provider empowering blockchain projects to scale and succeed. We combine smart contract engineering, brand building, and full-stack go-to-market execution to help projects move from idea to launch.
+
+## What We Do
+
+- **Smart Contract Development**: Custom-built, secure contracts for DeFi, tokens, staking, and beyond
+- **Operations & Infrastructure**: Streamlined tooling and processes for agile, scalable team operations
+- **Community & Growth**: Engagement strategies and campaigns tailored for your audiences
+- **Project Support**: Always-on Web3 support and real-time project visibility
+
+## Our Impact
+
+- 40+ Projects Launched
+- 60+ Smart Contracts Deployed
+- 7 Days Average Go-to-Market Time
+
+## Contact
+
+- Email: info@vandelaytechnologies.io
+- LinkedIn: [Vandelay Technologies](https://www.linkedin.com/company/vandelay-technologies)
+- Twitter: [@DeFi_Vandelay](https://x.com/DeFi_Vandelay)
+- GitHub: [Vandelay-Technologies](https://github.com/Vandelay-Technologies)
+
+---
+
+# Technical Documentation
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -47,7 +47,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <Head>
+        <meta property="og:title" content="Vandelay Technologies | Full-Service Web3 Solutions Provider" />
+        <meta property="og:description" content="Empowering blockchain projects to scale and succeed with tailored Web3 development, smart contract engineering, and growth strategy. Partner with Vandelay Technologies to unlock your project's full potential." />
         <meta property="og:image" content="https://vandelaytechnologies.io/og-image.png" />
+        <meta property="og:url" content="https://vandelaytechnologies.io/" />
+        <meta property="og:type" content="website" />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
