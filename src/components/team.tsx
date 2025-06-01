@@ -1,37 +1,6 @@
 import Image from 'next/image'
-
-const members = [
-    {
-        name: 'David Barclay',
-        role: 'Co-Founder // Lead',
-        avatar: '/team/david.png',
-        linkedin: 'https://www.linkedin.com/in/david-barclay1/'
-    },
-    {
-        name: 'Marius Krasauskas',
-        role: 'Co-Founder // Tech',
-        avatar: '/team/marius.png',
-        linkedin: 'https://www.linkedin.com/in/mariuskrasauskas/'
-    },
-    {
-        name: 'Tomas Buelow',
-        role: 'Co-Founder // Operations',
-        avatar: '/team/tom.png',
-        linkedin: 'https://www.linkedin.com/in/tom-buelow/'
-    },
-    {
-        name: 'Ally Polishchuk',
-        role: 'Strategy',
-        avatar: '/team/ally.png',
-        linkedin: 'https://www.linkedin.com/in/ally-polishchuk-972408147/'
-    },
-    {
-        name: 'Rico Soriano',
-        role: 'Marketing',
-        avatar: '/team/rico.png',
-        linkedin: 'https://www.linkedin.com/in/rico-john-soriano-383420266/'
-    },
-]
+import { settings } from '@/settings'
+import Link from 'next/link'
 
 export default function TeamSection() {
     return (
@@ -41,8 +10,8 @@ export default function TeamSection() {
 
                 <div>
                     <h3 className="mb-6 text-lg font-medium">Leadership</h3>
-                    <div className="grid grid-cols-1 gap-8 border-t py-6 sm:grid-cols-2 md:grid-cols-3">
-                        {members.map((member, index) => (
+                    <div className="grid grid-cols-2 gap-8 border-t py-6 sm:grid-cols-2 md:grid-cols-3">
+                        {settings.members.map((member, index) => (
                             <div 
                                 key={index} 
                                 className={`${
@@ -62,7 +31,7 @@ export default function TeamSection() {
                                 </div>
                                 <div className="mt-2 flex items-center gap-2">
                                     <span className="text-sm">{member.name}</span>
-                                    <a 
+                                    <Link 
                                         href={member.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -72,7 +41,7 @@ export default function TeamSection() {
                                         <svg className="size-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                                             <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"></path>
                                         </svg>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <span className="text-muted-foreground block text-xs">{member.role}</span>
                             </div>

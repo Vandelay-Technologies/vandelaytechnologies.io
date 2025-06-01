@@ -4,7 +4,7 @@ import Image from 'next/image'
 export const Logo = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="/icon.png"
+            src="/logo.png"
             alt="Vandelay Technologies Logo"
             width={28}
             height={28}

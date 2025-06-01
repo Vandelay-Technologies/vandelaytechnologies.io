@@ -12,6 +12,7 @@ import { Logo } from '@/components/logo'
 import { ArrowRight, Menu, Rocket, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { scrollToSection } from '@/lib/scroll'
+import { settings } from '@/settings'
 
 const menuItems = [
     { name: 'Features', href: '#features' },
@@ -84,7 +85,7 @@ export default function HeroSection() {
                     <div className="relative py-24 lg:py-28">
                         <div className="mx-auto max-w-7xl px-6 md:px-12">
                             <div className="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
-                                <Link href="https://github.com/Vandelay-Technologies/vandelay-smart-contracts" className="rounded-(--radius) mx-auto flex w-fit items-center gap-2 border p-1 pr-3">
+                                <Link href={settings.githubSmartContracts} className="rounded-(--radius) mx-auto flex w-fit items-center gap-2 border p-1 pr-3">
                                     <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">New</span>
                                     <span className="text-sm">Smart Contract Library</span>
                                     <span className="bg-(--color-border) block h-4 w-px"></span>

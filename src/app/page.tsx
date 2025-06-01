@@ -6,6 +6,8 @@ import StatsSection from '@/components/stats-3'
 import TeamSection from '@/components/team'
 import FooterSection from '@/components/footer'
 import { useAnimations } from '@/hooks/useAnimations'
+import FaqSection from '@/components/faq-section'
+import { settings } from '@/settings'
 
 export default function Home() {
   useAnimations();
@@ -24,6 +26,9 @@ export default function Home() {
       </div>
       <div className="fade-in-section">
         <TeamSection />
+      </div>
+      <div className="fade-in-section">
+        <FaqSection faqData={settings.faq} />
       </div>
       <FooterSection />
     </>
