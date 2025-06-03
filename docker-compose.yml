@@ -6,7 +6,7 @@ services:
     container_name: vandelaytechnologies-app
     restart: unless-stopped
     ports:
-      - "${PORT}:3000"
+      - "${DOCKER_PORT}:3000"
     networks:
       - shared_web
     env_file:
