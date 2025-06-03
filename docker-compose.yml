@@ -6,7 +6,7 @@ services:
     container_name: vandelaytechnologies-app
     restart: unless-stopped
     ports:
-      - "${PORT}:${PORT}"
+      - "${PORT}:3000"
     env_file:
       - .env
     environment:
