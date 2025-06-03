@@ -6,16 +6,16 @@ services:
     container_name: vandelaytechnologies-app
     restart: unless-stopped
     ports:
-      - "${PORT}:${PORT}"
+      - "${PORT}:3000"
     networks:
       - shared_web
     env_file:
       - .env
     environment:
       - ENV=${ENV}
-      - VIRTUAL_HOST=vandelaytechnologies.io,www.vandelaytechnologies.io
-      - LETS_ENCRYPT_HOST=vandelaytechnologies.io,www.vandelaytechnologies.io
-      - LETS_ENCRYPT_EMAIL=info@vandelaytechnologies.io
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETS_ENCRYPT_HOST=${LETS_ENCRYPT_HOST}
+      - LETS_ENCRYPT_EMAIL=${LETS_ENCRYPT_EMAIL}
     logging:
       options:
         max-size: "10m"
