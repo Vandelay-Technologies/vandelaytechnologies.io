@@ -11,9 +11,9 @@ services:
       - .env
     environment:
       - ENV=${ENV}
-      - VIRTUAL_HOST=${VIRTUAL_HOST}
-      - LETS_ENCRYPT_HOST=${VIRTUAL_HOST}
-      - LETS_ENCRYPT_EMAIL=${LETS_ENCRYPT_EMAIL}
+      - VIRTUAL_HOST=vandelaytechnologies.io,www.vandelaytechnologies.io
+      - LETS_ENCRYPT_HOST=vandelaytechnologies.io,www.vandelaytechnologies.io
+      - LETS_ENCRYPT_EMAIL=info@vandelaytechnologies.io
     logging:
       options:
         max-size: "10m"
