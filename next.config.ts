@@ -7,35 +7,20 @@ const nextConfig: NextConfig = {
     buildActivityPosition: "bottom-right",
   },
   async redirects() {
+    if (process.env.ENV === 'development') {
+      return [];  // No redirects in development
+    }
     return [
-      // Redirect non-www to www
       {
         source: '/:path*',
         has: [
           {
             type: 'host',
-            value: '(?<domain>vandelaytechnologies\\.io)',
+            value: '^www\\..*$',
           },
         ],
-        destination: 'https://www.vandelaytechnologies.io/:path*',
-        permanent: true,
-      },
-      // Redirect http to https (for www)
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.vandelaytechnologies.io',
-          },
-          {
-            type: 'header',
-            key: 'x-forwarded-proto',
-            value: 'http',
-          },
-        ],
-        destination: 'https://www.vandelaytechnologies.io/:path*',
-        permanent: true,
+        permanent: false,
+        destination: `https://${process.env.NEXT_PUBLIC_HOSTNAME}/:path*`,
       },
     ];
   },
