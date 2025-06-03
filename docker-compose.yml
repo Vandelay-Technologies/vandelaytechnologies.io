@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      target: production
+    container_name: vandelaytechnologies-app
+    restart: unless-stopped
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    environment:
+      - ENV=${ENV}
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - LETS_ENCRYPT_HOST=${VIRTUAL_HOST}
+      - LETS_ENCRYPT_EMAIL=${LETS_ENCRYPT_EMAIL}
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
