@@ -16,10 +16,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: 'host',
-            value: '^www\\..*$',
+            value: '^(?!www\\.).*$',
           },
         ],
-        permanent: false,
+        permanent: true,
         destination: `https://${process.env.NEXT_PUBLIC_HOSTNAME}/:path*`,
       },
     ];
