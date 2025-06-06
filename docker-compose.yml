@@ -3,6 +3,9 @@ services:
     build:
       context: .
       target: production
+      args:
+        - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
+        - NEXT_PUBLIC_HOSTNAME=${NEXT_PUBLIC_HOSTNAME}
     container_name: vandelaytechnologies-app
     restart: unless-stopped
     ports:
@@ -13,6 +16,10 @@ services:
       - .env
     environment:
       - ENV=${ENV}
+      - BASE_URL=${BASE_URL}
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
+      - NEXT_PUBLIC_HOSTNAME=${NEXT_PUBLIC_HOSTNAME}
+      - DOCKER_PORT=${DOCKER_PORT}
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
       - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}

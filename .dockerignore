@@ -1,0 +1,17 @@
+/node_modules
+/coverage
+/.next/
+/out/
+/build
+/dist
+.DS_Store
+*.pem
+npm-debug.log*
+.env
+.env.local
+.env.development
+.env.production
+*.tsbuildinfo
+next-env.d.ts
+combined.log
+error.log
