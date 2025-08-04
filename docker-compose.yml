@@ -11,7 +11,7 @@ services:
     ports:
       - "${DOCKER_PORT}:3000"
     networks:
-      - shared_web
+      - web
     env_file:
       - .env
     environment:
@@ -29,6 +29,6 @@ services:
         max-file: "3"
 
 networks:
-  shared_web:
-    name: shared_web
+  web:
+    name: web
     external: true
